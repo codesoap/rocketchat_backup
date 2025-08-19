@@ -61,7 +61,7 @@ def name_of(room):
         return html.escape(room['name'])
     usernames = room['usernames'].copy()
     usernames.remove(user)
-    return html.escape(usernames[0]) if len(usernames) > 0 else "unknown room"
+    return html.escape('_'.join(usernames)) if len(usernames) > 0 else "unknown room"
 
 
 def filter_rooms(rooms):
